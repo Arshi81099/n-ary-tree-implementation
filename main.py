@@ -70,7 +70,12 @@ class Solution:
 
 if __name__ == "__main__":
     solution = Solution()
-    values = [1, None, 2, 3, 4, 5, None, None, 6, 7, None, 8, None, 9, 10, None, None, 11, None, 12, None, 13, None, None, 14]
+
+    # values = [1, None, 2, 3, 4, 5, None, None, 6, 7, None, 8, None, 9, 10, None, None, 11, None, 12, None, 13, None, None, 14]
+
+    input_values = input("Enter the values for the N-ary tree (use 'None' for nulls, separated by spaces): ")
+    values = [int(x) if x != 'None' else None for x in input_values.split()]
+
     root = solution.createTree(values)
     print("Tree structure:")
     solution.print_tree(root)
