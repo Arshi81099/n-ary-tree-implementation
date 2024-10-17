@@ -54,7 +54,8 @@ python3 main.py
 Here's an example of how to use the implementation:
 
 ```python
-values = [1, None, 2, 3, 4, None, 5, 6]
+input_values = input("Enter the values for the N-ary tree (use 'None' for nulls, separated by spaces): ")
+values = [int(x) if x != 'None' else None for x in input_values.split()]
 solution = Solution()
 root = solution.createTree(values)
 
